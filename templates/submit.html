@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-4 py-xl-5">
+  <div class="row mb-5">
+      <div class="col-md-8 col-xl-6 text-center mx-auto">
+          <h2 class="fs-3 text-success fw-bold">Detection Result</h2>
+      </div>
+  </div>
+
+  <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+      <div class="col mx-auto text-center">
+          <img class="rounded img-fluid d-block card-img-top" src="{{ data.image }}" style="max-width:300px;">
+          <div class="py-4">
+              <h4>Disease Detected:</h4>
+              <h4 class="text-danger">{{ data.prediction }}</h4>
+          </div>
+      </div>
+  </div>
+
+  <div class="container mt-4">
+      <h3 class="text-success fw-bold">Description</h3>
+      <p class="fw-medium fs-5" style="text-align: justify;">{{ data.description }}</p>
+
+      <h3 class="text-success fw-bold mt-4">Preventive Steps</h3>
+      <p class="fw-medium fs-5" style="text-align: justify;">{{ data.possible_step }}</p>
+  </div>
+
+  <div class="text-center mt-5">
+      <a href="/" class="btn btn-primary">Go Back</a>
+  </div>
+</div>
+{% endblock %}
